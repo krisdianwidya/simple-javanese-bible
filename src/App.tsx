@@ -23,7 +23,7 @@ function App() {
       const data = await fetchAndParseBible();
       setVerses(data);
     } catch (err) {
-      setError('Gagal ngemot data Alkitab. Coba maneh.');
+      setError('Gagal loading data Alkitab. Coba maneh.');
       console.error(err);
     } finally {
       setLoading(false);
