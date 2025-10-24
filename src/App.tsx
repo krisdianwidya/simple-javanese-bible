@@ -64,7 +64,7 @@ function App() {
           {loading ? (
             <div className="flex items-center gap-3 text-amber-700">
               <Loader2 className="w-6 h-6 animate-spin" />
-              <p className="text-lg">Ngemot data Alkitab...</p>
+              <p className="text-lg">Loading data Alkitab...</p>
             </div>
           ) : (
             <>
