@@ -1,4 +1,5 @@
 import { BibleVerse, SearchResult } from '../types/bible';
+import { INDONESIAN_TO_JAVANESE } from '../constants/bookMapping';
 
 export function parseSearchQuery(query: string): {
   bookName: string;
@@ -11,10 +12,16 @@ export function parseSearchQuery(query: string): {
 
   if (!match) return null;
 
-  const bookName = match[1].trim();
+  let bookName = match[1].trim();
   const chapter = parseInt(match[2]);
   const verseStart = parseInt(match[3]);
   const verseEnd = match[4] ? parseInt(match[4]) : verseStart;
+
+  // Convert Indonesian book name to Javanese if needed
+  const javaneseseName = INDONESIAN_TO_JAVANESE[bookName];
+  if (javaneseseName) {
+    bookName = javaneseseName;
+  }
 
   return { bookName, chapter, verseStart, verseEnd };
 }

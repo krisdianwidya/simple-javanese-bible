@@ -23,7 +23,7 @@ export function SearchBar({ onSearch, isLoading }: SearchBarProps) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Tulis kaya: Lukas 18:9-14"
+          placeholder="Tulis kaya: Lukas 18:9-14 atau Yohanes 3:16"
           className="w-full px-4 py-3 pr-12 text-lg border-2 border-amber-200 rounded-lg focus:outline-none focus:border-amber-400 transition-colors"
           disabled={isLoading}
         />
